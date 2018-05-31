@@ -62,8 +62,9 @@ def run():
         jline=json.loads(line)
         for v in travpath(jline,parr):
             addtostats(v,stats)
+    sys.stdout.write("Value,Occurence")
     for w in sorted(stats, key=stats.get, reverse=True):
-        sys.stdout.write("\""+str(w)+"\";"+str(stats[w])+"\n")
+        sys.stdout.write("\""+str(w)+"\",\""+str(stats[w])+"\"\n")
 
 if __name__ == "__main__":
     run()
